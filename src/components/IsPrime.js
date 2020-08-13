@@ -2,12 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 const IsPrimeResult = styled.p`
-  padding: 40px;
+  margin-top: 40px;
   font-size: 40px;
   font-family: "Rajdhani-bold", serif;
   text-align: center;
 
   @media only screen and (min-width: 768px) {
+    margin-top: 100px;
   }
 `;
 

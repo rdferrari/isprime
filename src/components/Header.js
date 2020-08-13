@@ -3,9 +3,10 @@ import styled from "styled-components";
 
 const HeaderContainer = styled.div`
   text-align: center;
-  padding: 50px 0;
+  margin: 50px 0;
 
   @media only screen and (min-width: 768px) {
+    margin: 100px 0;
   }
 `;
 
