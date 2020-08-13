@@ -1,0 +1,15 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-isprime-dev-92332-authRole",
+            "UnauthRoleArn": "arn:aws:iam::837623038432:role/amplify-isprime-dev-92332-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::837623038432:role/amplify-isprime-dev-92332-authRole",
+            "Region": "ap-southeast-2",
+            "DeploymentBucketName": "amplify-isprime-dev-92332-deployment",
+            "UnauthRoleName": "amplify-isprime-dev-92332-unauthRole",
+            "StackName": "amplify-isprime-dev-92332",
+            "StackId": "arn:aws:cloudformation:ap-southeast-2:837623038432:stack/amplify-isprime-dev-92332/4a4b81f0-ddab-11ea-82e0-0620fb4f1fdc",
+            "AmplifyAppId": "d2634g1v15ic7m"
+        }
+    }
+}

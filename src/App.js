@@ -94,7 +94,7 @@ const App = () => {
   };
 
   return (
-    <AppContainer inputBackgorundColor={!primeListData ? "#ff00cd" : "#9DF0FF"}>
+    <AppContainer inputBackgorundColor={!primeListData ? "#361E68" : "#9DF0FF"}>
       <AppContent>
         {!data ? (
           <Header

@@ -32,7 +32,7 @@ const Intro = styled.p`
 `;
 
 const Input = styled.input`
-  background-color: #ff00cd;
+  background-color: #361e68;
   border: 0.5px solid #ffffff;
   border-radius: 5px;
   color: #ffffff;
@@ -49,10 +49,10 @@ const Input = styled.input`
 `;
 
 const Submit = styled.input`
-  background-color: #9df0ff;
+  background-color: #ff00cd;
   border: 0.5px solid #ffffff;
   border-radius: 5px;
-  color: #ff00cd;
+  color: #ffffff;
   font-size: 18px;
   font-family: "Rajdhani-medium", serif;
   padding: 5px 10px;
