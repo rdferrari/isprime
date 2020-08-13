@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import { primeList } from "./isPrime";
 
+import Header from "./components/Header";
 import PrimeList from "./components/PrimeList";
 import IsPrime from "./components/IsPrime";
 
@@ -29,9 +30,10 @@ const AppContent = styled.div`
   }
 `;
 
-const FormContainer = styled.div`
-  text-align: center;
-  padding: 50px 0;
+const ResultContainer = styled.div`
+  background-color: #9df0ff;
+  top: 0;
+  width: 100%;
 
   @media only screen and (min-width: 768px) {
   }
@@ -50,33 +52,22 @@ const App = () => {
   return (
     <AppContainer>
       <AppContent>
-        <FormContainer>
-          <h1>Sieve of Eratosthenes React Hack</h1>
-          <p>by Rodrigo Ferrari</p>
-          <p>
-            Pick a number less or equal to 1 000 000 to check if it is a prime
-            number and explore all the prime numbers less than the number of
-            your choice.
-          </p>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <input
-              type="number"
-              name="is_prime"
-              ref={register({ required: true })}
-            />
-            <input type="submit" />
-            {errors.is_prime && <p>*Enter a number</p>}
-          </form>
-        </FormContainer>
+        <Header
+          handleSubmit={handleSubmit(onSubmit)}
+          register={register}
+          errors={errors.is_prime}
+        />
 
-        <IsPrime primeListData={primeListData} data={data} />
+        <ResultContainer>
+          <IsPrime primeListData={primeListData} data={data} />
 
-        {data && (
-          <div>
-            <h2>List of prime numbers less or equal to {data}</h2>
-            <PrimeList primeListData={primeListData} />
-          </div>
-        )}
+          {data && (
+            <div>
+              <h2>List of prime numbers less or equal to {data}</h2>
+              <PrimeList primeListData={primeListData} />
+            </div>
+          )}
+        </ResultContainer>
       </AppContent>
     </AppContainer>
   );
