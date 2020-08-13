@@ -71,28 +71,42 @@ const Button = styled.button`
 const App = () => {
   const [data, setData] = useState("");
   const [primeListData, setPrimeListData] = useState("");
-  const [showResult, setShowResult] = useState(false);
+  const [numTooBig, setNumTooBig] = useState("");
 
   const { register, handleSubmit, errors } = useForm();
+
+  const handleSubmiting = (data) => {
+    onSubmit(data);
+  };
+
   const onSubmit = (data) => {
-    setData(data.is_prime);
-    setPrimeListData(primeList(data.is_prime));
-    setShowResult(true);
+    const dataInput = data.is_prime;
+    if (dataInput < 100000) {
+      setData(dataInput);
+      setPrimeListData(primeList(dataInput));
+    }
+    return setNumTooBig("Enter a number less than 100 000");
+  };
+
+  const handleClose = () => {
+    setData("");
+    setPrimeListData("");
   };
 
   return (
-    <AppContainer inputBackgorundColor={!showResult ? "#ff00cd" : "#9DF0FF"}>
+    <AppContainer inputBackgorundColor={!primeListData ? "#ff00cd" : "#9DF0FF"}>
       <AppContent>
-        {showResult === false ? (
+        {!data ? (
           <Header
-            handleSubmit={handleSubmit(onSubmit)}
+            handleSubmit={handleSubmit(handleSubmiting)}
             register={register}
             errors={errors.is_prime}
+            numTooBig={numTooBig}
           />
         ) : (
           <ResultContainer>
+            <Button onClick={() => handleClose()}>Close</Button>
             <IsPrime primeListData={primeListData} data={data} />
-            <Button onClick={() => setShowResult(false)}>Close</Button>
 
             {data && (
               <div>

@@ -13,10 +13,6 @@ const IsPrimeResult = styled.p`
 `;
 
 const IsPrime = ({ primeListData, data }) => {
-  console.log(
-    primeListData && primeListData[primeListData.length - 1].prime_num
-  );
-
   let primeNumberData =
     primeListData && primeListData[primeListData.length - 1].prime_num;
 

@@ -1,5 +1,5 @@
 export const primeList = (num) => {
-  if (num > 10e5 || num <= 1) {
+  if (num > 100000 || num <= 1) {
     return null;
   }
 

@@ -10,7 +10,7 @@ const HeaderContainer = styled.div`
   }
 `;
 
-const By = styled.p`
+const SmallText = styled.p`
   color: #ffffff;
   font-size: 15px;
 
@@ -73,15 +73,15 @@ const FormContainer = styled.form`
   }
 `;
 
-const Header = ({ handleSubmit, register, errors }) => {
+const Header = ({ handleSubmit, register, errors, numTooBig }) => {
   return (
     <HeaderContainer>
       <h1>Sieve of Eratosthenes React Hack</h1>
-      <By>by Rodrigo Ferrari</By>
+      <SmallText>by Rodrigo Ferrari</SmallText>
+
       <Intro>
-        Pick a number less or equal to 1 000 000 to check if it is a prime
-        number and explore all the prime numbers less than the number of your
-        choice.
+        Pick a number less or equal to 100 000 to check if it is a prime number
+        and explore all the prime numbers less than the number of your choice.
       </Intro>
       <FormContainer onSubmit={handleSubmit}>
         <Input
@@ -90,8 +90,11 @@ const Header = ({ handleSubmit, register, errors }) => {
           ref={register({ required: true })}
           placeholder="Enter a number"
         />
+
         <Submit type="submit" />
-        {errors && <p>*Enter a number</p>}
+
+        {errors && <SmallText>*Enter a number less than 100 000</SmallText>}
+        <SmallText>{numTooBig}</SmallText>
       </FormContainer>
     </HeaderContainer>
   );
